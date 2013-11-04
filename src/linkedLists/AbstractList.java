@@ -1,5 +1,7 @@
 package linkedLists;
 
+import java.util.Iterator;
+
 public abstract class AbstractList<T> implements ListInterface<T> {
 	
 	protected int length;
@@ -13,12 +15,31 @@ public abstract class AbstractList<T> implements ListInterface<T> {
 		add(length, item);
 	}
 	
+	public void add(ListInterface<T> list) {
+		for(T item : list) {
+			add(item);
+		}
+	}
+	
+	public boolean contains(T item) {
+		for(T cursor : this) {
+			if(cursor.equals(item)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public int getLength() {
 		return length;
 	}
 	
 	public boolean isEmpty() {
 		return (length == 0);
+	}
+	
+	public Iterator<T> iterator() {
+		return new ListIterator<T>(this);
 	}
 
 }

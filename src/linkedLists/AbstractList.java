@@ -2,7 +2,7 @@ package linkedLists;
 
 import java.util.Iterator;
 
-public abstract class AbstractList<T> implements ListInterface<T> {
+abstract class AbstractList<T> implements ListInterface<T> {
 	
 	protected int length;
 	

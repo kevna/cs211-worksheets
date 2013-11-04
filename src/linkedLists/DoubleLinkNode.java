@@ -1,6 +1,6 @@
 package linkedLists;
 
-public class DoubleLinkNode<T> {
+class DoubleLinkNode<T> {
 
 	private T content;
 	private DoubleLinkNode<T> prev, next;

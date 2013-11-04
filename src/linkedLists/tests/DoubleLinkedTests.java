@@ -22,12 +22,13 @@ public class DoubleLinkedTests {
 		//change data
 		for (int i = 0; i < ITERATIONS; i++) {
 			tstStrings[i] = "Item number " + i;
-			tstList.add(i, tstStrings[i]);
+			tstList.add(i+1, tstStrings[i]);
 		//test changes
 			for (int j = i; j >= 0; j--) {
 				tstResult = tstList.get(j);
 				assertTrue("Results not equal at item " + j
-						+ " with " + i + "elements", tstStrings[j].equals(tstResult));
+						+ " with " + (i+1) + "elements (" + tstStrings[j] + tstResult + ")",
+						tstStrings[j].equals(tstResult));
 			}
 		}
 		//teardown

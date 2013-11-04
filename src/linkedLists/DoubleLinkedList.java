@@ -24,12 +24,12 @@ public class DoubleLinkedList<T> extends AbstractList<T> {
 			DoubleLinkNode<T> current;
 			if (n < (length/2)) {
 				current = head;
-				for (int i = 0; i < ((n - 1)/2); i++) {
+				for (int i = 0; i < ((n/2)-1); i++) {
 					current = current.getNext();
 				}
 			} else {
 				current = tail;
-				for (int i = length; i >= ((n - 1)/2); i--) {
+				for (int i = length; i >= ((n/2)-1); i--) {
 					current = current.getPrevious();
 				}
 			}
@@ -39,9 +39,8 @@ public class DoubleLinkedList<T> extends AbstractList<T> {
 			nextItem.setPrevious(newItem);
 			current.setNext(newItem);
 		} else {
-			DoubleLinkNode<T> current = tail;
 			tail.setNext(newItem);
-			newItem.setPrevious(current);
+			newItem.setPrevious(tail);
 			tail = newItem;
 		}
 		length++;
@@ -49,14 +48,16 @@ public class DoubleLinkedList<T> extends AbstractList<T> {
 	
 	public T get(int n) {
 		DoubleLinkNode<T> current;
-		if (n < ((length - 1) / 2)) {
+		if (length == 1) {
+			return head.getContent();
+		} else if (n < ((length / 2) - 1)) {
 			current = head;
-			for (int i = 0; i < ((n - 1)/2); i++) {
+			for (int i = 0; i < ((n/2)-1); i++) {
 				current = current.getNext();
 			}
 		} else if (n < (length - 1)) {
 			current = tail;
-			for (int i = length; i > ((n - 1)/2); i++) {
+			for (int i = length; i > ((n/2)-1); i--) {
 				current = current.getPrevious();
 			}
 		} else if (n == (length-1)) {

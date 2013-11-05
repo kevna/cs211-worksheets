@@ -1,22 +1,19 @@
-package testStacksAndQueues;
+package boundedStacksAndQueues;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import boundedStacksAndQueues.QueueOverflowException;
 import unboundedStacksAndQueues.QueueInterface;
-import unboundedStacksAndQueues.UnboundedQueue;
 
-public class UnboundedQueueTests {
+public class BoundedQueueTests {
 
 	String tstString = "Some test String.";
 	
 	@Test
 	public void tstAddHeadItem() {
 		//set up test
-		QueueInterface tstQueue = new UnboundedQueue();
+		QueueInterface tstQueue = new BoundedQueue();
 		String tstResult = null;
 		//change data
 		try {
@@ -30,10 +27,10 @@ public class UnboundedQueueTests {
 		//teardown
 	}
 	
-	//@Test
+	@Test
 	public void tstOverflow() {
 		//set up test
-		QueueInterface tstQueue = new UnboundedQueue();
+		QueueInterface tstQueue = new BoundedQueue(2);
 		try {
 			tstQueue.add(tstString);
 			tstQueue.add(tstString);
@@ -53,7 +50,7 @@ public class UnboundedQueueTests {
 	@Test
 	public void tstEmpty() {
 		//set up test
-		QueueInterface tstQueue = new UnboundedQueue();
+		QueueInterface tstQueue = new BoundedQueue();
 		try {
 			tstQueue.add(tstString);
 		//change data

@@ -5,11 +5,11 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import boundedStacksAndQueues.StackException;
-import boundedStacksAndQueues.StackOverflowException;
-import boundedStacksAndQueues.StackUnderflowException;
 import stacksAndQueues.StackInterface;
 import stacksAndQueues.UnboundedStack;
+import stacksAndQueues.exceptions.StackException;
+import stacksAndQueues.exceptions.StackOverflowException;
+import stacksAndQueues.exceptions.StackUnderflowException;
 
 public class UnboundedStackTests {
 	

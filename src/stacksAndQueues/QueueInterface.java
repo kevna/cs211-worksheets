@@ -12,9 +12,9 @@ public interface QueueInterface<T> {
 	/**
 	 * Adds an Item to the back of the Queue.
 	 * @param item		Item to add to the back of the queue.
-	 * @throws boundedStacksAndQueues.QueueOverflowException		Overflow, too many items (bounded queue)
+	 * @throws stacksAndQueues.exceptions.QueueOverflowException		Overflow, too many items (bounded queue)
 	 */
-	public void add(T item) throws boundedStacksAndQueues.QueueOverflowException;
+	public void add(T item) throws stacksAndQueues.exceptions.QueueOverflowException;
 	
 	/**
 	 * Takes the item from the front of the queue.

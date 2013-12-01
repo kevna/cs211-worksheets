@@ -12,16 +12,16 @@ public interface StackInterface<T> {
 	/**
 	 * Adds an Item to the top of the stack.
 	 * @param item		Item to add to the top of the stack
-	 * @throws boundedStacksAndQueues.StackOverflowException		Overflow, too many items (bounded Stack)
+	 * @throws stacksAndQueues.exceptions.StackOverflowException		Overflow, too many items (bounded Stack)
 	 */
-	public void push(T item) throws boundedStacksAndQueues.StackOverflowException;
+	public void push(T item) throws stacksAndQueues.exceptions.StackOverflowException;
 	
 	/**
 	 * Takes the item from the top of the stack.
 	 * @return The item that was on top of the stack.
-	 * @throws boundedStacksAndQueues.StackUnderflowException		Underflow, no items in stack.
+	 * @throws stacksAndQueues.exceptions.StackUnderflowException		Underflow, no items in stack.
 	 */
-	public T pop() throws boundedStacksAndQueues.StackUnderflowException;
+	public T pop() throws stacksAndQueues.exceptions.StackUnderflowException;
 	/**
 	 * Accesses the item on the top of the stack.
 	 * @return The item currently on the top of the stack.
@@ -31,16 +31,16 @@ public interface StackInterface<T> {
 	/**
 	 * Duplicate the item on the top of the stack.
 	 * {@link #peek()} to look at the top item and {@link #push(Object)} a copy of it on top.
-	 * @throws boundedStacksAndQueues.StackOverflowException		Overflow, too many items (bounded Stack)
+	 * @throws stacksAndQueues.exceptions.StackOverflowException		Overflow, too many items (bounded Stack)
 	 */
-	public void duplicate() throws boundedStacksAndQueues.StackOverflowException;
+	public void duplicate() throws stacksAndQueues.exceptions.StackOverflowException;
 	
 	/**
 	 * Swap the top two items of the stack.
 	 * {@link #pop()} two items & then {@link #push(Object)} them in reverse order 
-	 * @throws boundedStacksAndQueues.StackUnderflowException		Underflow, no items in stack.
+	 * @throws stacksAndQueues.exceptions.StackUnderflowException		Underflow, no items in stack.
 	 */
-	public void exchange() throws boundedStacksAndQueues.StackUnderflowException;
+	public void exchange() throws stacksAndQueues.exceptions.StackUnderflowException;
 	
 	/**
 	 * Whether the stack is currently empty.

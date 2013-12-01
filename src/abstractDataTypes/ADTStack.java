@@ -1,6 +1,6 @@
 package abstractDataTypes;
 
-import boundedStacksAndQueues.StackUnderflowException;
+import stacksAndQueues.exceptions.StackUnderflowException;
 
 public class ADTStack<T> extends stacksAndQueues.UnboundedStack<T> implements AbstractDataInterface<T> {
 

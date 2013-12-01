@@ -1,6 +1,6 @@
 package stacksAndQueues;
 
-import boundedStacksAndQueues.StackUnderflowException;
+import stacksAndQueues.exceptions.StackUnderflowException;
 
 /**
  * An unbounded implementation of {@link StackInterface}

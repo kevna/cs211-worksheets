@@ -1,5 +1,7 @@
 package boundedStacksAndQueues;
 
+import stacksAndQueues.exceptions.QueueOverflowException;
+
 public class BoundedQueue implements stacksAndQueues.QueueInterface<Object> {
 	
 	public static final int DEFAULT_MAXIMUM = 25;

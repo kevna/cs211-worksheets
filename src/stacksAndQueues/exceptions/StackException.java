@@ -1,4 +1,4 @@
-package boundedStacksAndQueues;
+package stacksAndQueues.exceptions;
 import java.lang.Exception;
 
 public class StackException extends Exception {

@@ -5,9 +5,9 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import boundedStacksAndQueues.QueueOverflowException;
 import stacksAndQueues.QueueInterface;
 import stacksAndQueues.UnboundedQueue;
+import stacksAndQueues.exceptions.QueueOverflowException;
 
 public class UnboundedQueueTests {
 

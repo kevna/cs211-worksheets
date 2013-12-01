@@ -6,10 +6,10 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import boundedStacksAndQueues.BoundedStack;
-import boundedStacksAndQueues.StackException;
-import boundedStacksAndQueues.StackOverflowException;
-import boundedStacksAndQueues.StackUnderflowException;
 import stacksAndQueues.StackInterface;
+import stacksAndQueues.exceptions.StackException;
+import stacksAndQueues.exceptions.StackOverflowException;
+import stacksAndQueues.exceptions.StackUnderflowException;
 
 public class BoundedStackTests {
 	

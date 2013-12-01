@@ -71,20 +71,22 @@ public class UnboundedStack<T> implements StackInterface<T> {
 	
 	@Override
 	public boolean equals(Object other) {
-		//@SuppressWarnings("unchecked")
-		UnboundedStack<T> otherStack = (UnboundedStack<T>)other;
-		if (this.depth() == otherStack.depth()) {
-			for (int i = 0; i < theStack.getLength(); i++) {
-				try {
-				if (!theStack.get(i).equals(otherStack.pop())) {
-					return false;
+		try {
+			@SuppressWarnings("unchecked")
+			UnboundedStack<T> otherStack = (UnboundedStack<T>)other;
+			if (this.depth() == otherStack.depth()) {
+				for (int i = 0; i < theStack.getLength(); i++) {
+					try {
+					if (!theStack.get(i).equals(otherStack.pop())) {
+						return false;
+					}
+					} catch(StackUnderflowException e) {
+						//unreachable code
+					}
 				}
-				} catch(StackUnderflowException e) {
-					//unreachable code
-				}
+				return true;
 			}
-			return true;
-		}
+		} catch(ClassCastException e) {}
 		return false;
 	}
 

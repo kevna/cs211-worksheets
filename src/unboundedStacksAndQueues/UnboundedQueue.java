@@ -49,7 +49,8 @@ public class UnboundedQueue<T> implements QueueInterface<T> {
 	
 	@Override
 	public boolean equals(Object other) {
-		//@SuppressWarnings("unchecked")
+		try {
+		@SuppressWarnings("unchecked")
 		UnboundedQueue<T> otherQueue = (UnboundedQueue<T>)other;
 		if (this.getLength() == otherQueue.getLength()) {
 			for (int i = 0; i < theQueue.getLength(); i++) {
@@ -59,6 +60,7 @@ public class UnboundedQueue<T> implements QueueInterface<T> {
 			}
 			return true;
 		}
+		} catch(ClassCastException e) {}
 		return false;
 	}
 

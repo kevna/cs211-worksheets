@@ -1,4 +1,4 @@
-package unboundedStacksAndQueues;
+package stacksAndQueues;
 
 /**
  * Interface declaring methods for a stack class

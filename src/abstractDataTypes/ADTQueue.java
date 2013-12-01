@@ -1,6 +1,6 @@
 package abstractDataTypes;
 
-public class ADTQueue<T> extends unboundedStacksAndQueues.UnboundedQueue<T> implements AbstractDataInterface<T> {
+public class ADTQueue<T> extends stacksAndQueues.UnboundedQueue<T> implements AbstractDataInterface<T> {
 
 	@Override
 	public T get(int n) {

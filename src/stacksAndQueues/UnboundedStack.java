@@ -1,4 +1,4 @@
-package unboundedStacksAndQueues;
+package stacksAndQueues;
 
 import boundedStacksAndQueues.StackUnderflowException;
 

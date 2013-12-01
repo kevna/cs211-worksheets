@@ -9,7 +9,7 @@ import boundedStacksAndQueues.BoundedStack;
 import boundedStacksAndQueues.StackException;
 import boundedStacksAndQueues.StackOverflowException;
 import boundedStacksAndQueues.StackUnderflowException;
-import unboundedStacksAndQueues.StackInterface;
+import stacksAndQueues.StackInterface;
 
 public class BoundedStackTests {
 	

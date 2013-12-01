@@ -1,4 +1,4 @@
-package unboundedStacksAndQueues;
+package stacksAndQueues;
 
 /**
  * An unbounded implementation of {@link QueueInterface}

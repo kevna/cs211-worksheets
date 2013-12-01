@@ -1,6 +1,6 @@
 package boundedStacksAndQueues;
 
-public class BoundedStack implements unboundedStacksAndQueues.StackInterface<Object> {
+public class BoundedStack implements stacksAndQueues.StackInterface<Object> {
 	
 	public static final int DEFAULT_MAXIMUM = 25;
 	

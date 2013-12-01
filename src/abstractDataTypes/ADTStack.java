@@ -2,7 +2,7 @@ package abstractDataTypes;
 
 import boundedStacksAndQueues.StackUnderflowException;
 
-public class ADTStack<T> extends unboundedStacksAndQueues.UnboundedStack<T> implements AbstractDataInterface<T> {
+public class ADTStack<T> extends stacksAndQueues.UnboundedStack<T> implements AbstractDataInterface<T> {
 
 	@Override
 	public void add(T item) {

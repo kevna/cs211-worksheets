@@ -1,4 +1,4 @@
-package unboundedStacksAndQueues;
+package stacksAndQueues;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -6,8 +6,8 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import boundedStacksAndQueues.QueueOverflowException;
-import unboundedStacksAndQueues.QueueInterface;
-import unboundedStacksAndQueues.UnboundedQueue;
+import stacksAndQueues.QueueInterface;
+import stacksAndQueues.UnboundedQueue;
 
 public class UnboundedQueueTests {
 

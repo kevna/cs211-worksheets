@@ -8,3 +8,5 @@ Following this comes the implementations of linked and double-linked lists and t
 Finally there came the implementation of a binary search tree.
 The worksheets also require JUnit testing for the data structures, these tests reside in tst/ in folders parallel to those holding the implementations under src/.
 
+The javadoc for these datastructures exists at the [Repo pages] (http://kevna.github.io/cs211-worksheets/)
+

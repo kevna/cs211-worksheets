@@ -2,9 +2,9 @@ package unboundedStacksAndQueues;
 
 import boundedStacksAndQueues.StackUnderflowException;
 
-public class UnboundedStack implements StackInterface{
+public class UnboundedStack<T> implements StackInterface<T> {
 	
-	private linkedLists.ListInterface<Object> theStack;
+	private linkedLists.ListInterface<T> theStack;
 	//private static final int DEFAULT_MAXIMUM = 25;
 
 	public UnboundedStack() {
@@ -13,16 +13,16 @@ public class UnboundedStack implements StackInterface{
 
 	//custom size constructor
 	public UnboundedStack(int size) {
-		theStack= new linkedLists.LinkedList<>();
+		theStack= new linkedLists.DoubleLinkedList<>();
 	}
 
 	//add an item to the top of the stack
-	public void push(Object item) {
+	public void push(T item) {
 			theStack.add(item);
 	}
 
 	//take the top item off of the stack
-	public Object pop() throws StackUnderflowException {
+	public T pop() throws StackUnderflowException {
 		if (theStack.isEmpty()) {
 			throw new StackUnderflowException();
 		} else {
@@ -31,7 +31,7 @@ public class UnboundedStack implements StackInterface{
 	}
 
 	//access the top of the stack without popping it off
-	public Object peek() {
+	public T peek() {
 		if (!theStack.isEmpty()) {
 			return theStack.get(theStack.getLength() - 1);
 		}
@@ -43,8 +43,8 @@ public class UnboundedStack implements StackInterface{
 	}
 	
 	public void exchange() throws StackUnderflowException {
-			Object itemOne = pop();
-			Object itemTwo = pop();
+			T itemOne = pop();
+			T itemTwo = pop();
 			push(itemOne);
 			push(itemTwo);
 	}
@@ -76,7 +76,8 @@ public class UnboundedStack implements StackInterface{
 	
 	@Override
 	public boolean equals(Object other) {
-		UnboundedStack otherStack = (UnboundedStack)other;
+		//@SuppressWarnings("unchecked")
+		UnboundedStack<T> otherStack = (UnboundedStack<T>)other;
 		if (this.depth() == otherStack.depth()) {
 			for (int i = 0; i < theStack.getLength(); i++) {
 				try {

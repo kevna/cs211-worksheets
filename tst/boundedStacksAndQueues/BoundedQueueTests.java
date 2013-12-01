@@ -13,7 +13,7 @@ public class BoundedQueueTests {
 	@Test
 	public void tstAddHeadItem() {
 		//set up test
-		QueueInterface tstQueue = new BoundedQueue();
+		QueueInterface<Object> tstQueue = new BoundedQueue();
 		String tstResult = null;
 		//change data
 		try {
@@ -30,7 +30,7 @@ public class BoundedQueueTests {
 	@Test
 	public void tstOverflow() {
 		//set up test
-		QueueInterface tstQueue = new BoundedQueue(2);
+		QueueInterface<Object> tstQueue = new BoundedQueue(2);
 		try {
 			tstQueue.add(tstString);
 			tstQueue.add(tstString);
@@ -50,7 +50,7 @@ public class BoundedQueueTests {
 	@Test
 	public void tstEmpty() {
 		//set up test
-		QueueInterface tstQueue = new BoundedQueue();
+		QueueInterface<Object> tstQueue = new BoundedQueue();
 		try {
 			tstQueue.add(tstString);
 		//change data

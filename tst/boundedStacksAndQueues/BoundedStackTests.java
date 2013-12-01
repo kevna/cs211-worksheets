@@ -18,7 +18,7 @@ public class BoundedStackTests {
 	@Test
 	public void tstPushPeekItem() {
 		//setup
-		StackInterface tstStack = new BoundedStack();
+		StackInterface<Object> tstStack = new BoundedStack();
 		String tstResult = null;
 		//change data
 		try {
@@ -35,7 +35,7 @@ public class BoundedStackTests {
 	@Test
 	public void tstPushPopItem() {
 		//setup
-		StackInterface tstStack = new BoundedStack();
+		StackInterface<Object> tstStack = new BoundedStack();
 		String tstResult = null;
 		//change data
 		try {
@@ -52,7 +52,7 @@ public class BoundedStackTests {
 	@Test
 	public void tstOverflowException() {
 		//set up test
-		StackInterface tstStack = new BoundedStack(2);
+		StackInterface<Object> tstStack = new BoundedStack(2);
 		//change data
 		try {
 			tstStack.push(tstString);
@@ -71,7 +71,7 @@ public class BoundedStackTests {
 	@Test
 	public void tstUnderflowException() {
 		//set up test
-		StackInterface tstStack = new BoundedStack();
+		StackInterface<Object> tstStack = new BoundedStack();
 		//change data
 		try {
 			tstStack.pop();
@@ -84,7 +84,7 @@ public class BoundedStackTests {
 	@Test
 	public void tstDuplicate() {
 		//set up test
-		StackInterface tstStack = new BoundedStack();
+		StackInterface<Object> tstStack = new BoundedStack();
 		String tstResultOne = null, tstResultTwo = null;
 		try {
 			tstStack.push(tstString);
@@ -103,7 +103,7 @@ public class BoundedStackTests {
 	@Test
 	public void tstExchange() {
 		//set up test
-		StackInterface tstStack = new BoundedStack();
+		StackInterface<Object> tstStack = new BoundedStack();
 		String tstStringTwo = "Another interesting String";
 		String tstResultOne = null, tstResultTwo = null;
 		try {
@@ -125,7 +125,7 @@ public class BoundedStackTests {
 	@Test
 	public void tstEmpty() {
 		//set up test
-		StackInterface tstStack = new BoundedStack();
+		StackInterface<Object> tstStack = new BoundedStack();
 		try {
 			tstStack.push(tstString);
 		//change data
@@ -142,7 +142,7 @@ public class BoundedStackTests {
 	public void tstDepth() {
 		//set up test
 		int tstCount = 5;
-		StackInterface tstStack = new BoundedStack(); 
+		StackInterface<Object> tstStack = new BoundedStack(); 
 		//change data
 		try {
 		for (int i = 0; i < tstCount; i++) {
@@ -161,7 +161,7 @@ public class BoundedStackTests {
 		//set up test
 		int tstSize = 4; 
 		//change data
-		StackInterface tstStack = new BoundedStack(tstSize);
+		StackInterface<Object> tstStack = new BoundedStack(tstSize);
 		//test changes
 		assertTrue("Not correct size", (tstStack.sizeof() == tstSize));
 		//teardown

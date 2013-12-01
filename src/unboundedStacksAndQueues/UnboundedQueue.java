@@ -6,7 +6,6 @@ public class UnboundedQueue<T> implements QueueInterface<T> {
 
 	//default constructor
 	public UnboundedQueue() {
-		//call size constructor with defaut size
 		theQueue= new linkedLists.DoubleLinkedList<>();
 	}
 

@@ -8,11 +8,6 @@ public class UnboundedStack<T> implements StackInterface<T> {
 	//private static final int DEFAULT_MAXIMUM = 25;
 
 	public UnboundedStack() {
-		this(DEFAULT_MAXIMUM);
-	}
-
-	//custom size constructor
-	public UnboundedStack(int size) {
 		theStack= new linkedLists.DoubleLinkedList<>();
 	}
 

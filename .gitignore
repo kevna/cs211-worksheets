@@ -10,7 +10,6 @@
 *.project
 *.metadata
 bin/**
-doc/**
 tmp/**
 tmp/**/*
 *.tmp

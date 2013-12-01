@@ -1,0 +1,10 @@
+CS211 worksheets - Abstract Data Types
+======================================
+
+This Repo was created to store the source code resulting from several worksheets for module CS211 (Data Structures and Algorithms) of my university course.
+These worksheets start with reading in files and then proceed to the implementation of a suite of abstract data structures.
+The first structures requested are a stack and queue, for ease these are built around basic array (as a result they are bounded structures).
+Following this comes the implementations of linked and double-linked lists and then the modification of the bounded stacks and queues, to use linked lists & therefore be unbounded.
+Finally there came the implementation of a binary search tree.
+The worksheets also require JUnit testing for the data structures, these tests reside in tst/ in folders parallel to those holding the implementations under src/.
+

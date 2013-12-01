@@ -1,26 +1,26 @@
 package unboundedStacksAndQueues;
 
-public class UnboundedQueue implements QueueInterface {
+public class UnboundedQueue<T> implements QueueInterface<T> {
 	
-	private linkedLists.ListInterface<Object> theQueue;
+	private linkedLists.ListInterface<T> theQueue;
 
 	//default constructor
 	public UnboundedQueue() {
 		//call size constructor with defaut size
-		theQueue= new linkedLists.LinkedList<>();
+		theQueue= new linkedLists.DoubleLinkedList<>();
 	}
 
 	//add an object to the end of the queue
-	public void add(Object item) {
+	public void add(T item) {
 			theQueue.add(item);
 	}
 
 	//take the item from the front of the queue
-	public Object remove() {
+	public T remove() {
 		return theQueue.remove(0);
 	}
 
-	public Object head() {
+	public T head() {
 		return theQueue.get(0);
 	}
 	
@@ -50,7 +50,8 @@ public class UnboundedQueue implements QueueInterface {
 	
 	@Override
 	public boolean equals(Object other) {
-		UnboundedQueue otherQueue = (UnboundedQueue)other;
+		//@SuppressWarnings("unchecked")
+		UnboundedQueue<T> otherQueue = (UnboundedQueue<T>)other;
 		if (this.getLength() == otherQueue.getLength()) {
 			for (int i = 0; i < theQueue.getLength(); i++) {
 				if (!theQueue.get(i).equals(otherQueue.remove())) {

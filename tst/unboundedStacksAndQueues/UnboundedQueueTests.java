@@ -16,7 +16,7 @@ public class UnboundedQueueTests {
 	@Test
 	public void tstAddHeadItem() {
 		//set up test
-		QueueInterface tstQueue = new UnboundedQueue();
+		QueueInterface<String> tstQueue = new UnboundedQueue<>();
 		String tstResult = null;
 		//change data
 		try {
@@ -33,7 +33,7 @@ public class UnboundedQueueTests {
 	//@Test
 	public void tstOverflow() {
 		//set up test
-		QueueInterface tstQueue = new UnboundedQueue();
+		QueueInterface<String> tstQueue = new UnboundedQueue<>();
 		try {
 			tstQueue.add(tstString);
 			tstQueue.add(tstString);
@@ -53,7 +53,7 @@ public class UnboundedQueueTests {
 	@Test
 	public void tstEmpty() {
 		//set up test
-		QueueInterface tstQueue = new UnboundedQueue();
+		QueueInterface<String> tstQueue = new UnboundedQueue<>();
 		try {
 			tstQueue.add(tstString);
 		//change data

@@ -18,7 +18,7 @@ public class UnboundedStackTests {
 	@Test
 	public void tstPushPeekItem() {
 		//setup
-		StackInterface tstStack = new UnboundedStack();
+		StackInterface<String> tstStack = new UnboundedStack<>();
 		String tstResult = null;
 		//change data
 		try {
@@ -35,7 +35,7 @@ public class UnboundedStackTests {
 	@Test
 	public void tstPushPopItem() {
 		//setup
-		StackInterface tstStack = new UnboundedStack();
+		StackInterface<String> tstStack = new UnboundedStack<>();
 		String tstResult = null;
 		//change data
 		try {
@@ -49,29 +49,10 @@ public class UnboundedStackTests {
 		//teardown
 	}
 	
-	//@Test
-	public void tstOverflowException() {
-		//set up test
-		StackInterface tstStack = new UnboundedStack(2);
-		//change data
-		try {
-			tstStack.push(tstString);
-			tstStack.push(tstString);
-		} catch(StackOverflowException e) {
-			fail("StackOverflowException occured early");
-		}
-		try {
-			tstStack.push(tstString);
-		//test changes
-			fail("no StackOverflowException");
-		} catch(StackOverflowException e) {}
-		//teardown
-	}
-	
 	@Test
 	public void tstUnderflowException() {
 		//set up test
-		StackInterface tstStack = new UnboundedStack();
+		StackInterface<String> tstStack = new UnboundedStack<>();
 		//change data
 		try {
 			tstStack.pop();
@@ -84,7 +65,7 @@ public class UnboundedStackTests {
 	@Test
 	public void tstDuplicate() {
 		//set up test
-		StackInterface tstStack = new UnboundedStack();
+		StackInterface<String> tstStack = new UnboundedStack<>();
 		String tstResultOne = null, tstResultTwo = null;
 		try {
 			tstStack.push(tstString);
@@ -103,7 +84,7 @@ public class UnboundedStackTests {
 	@Test
 	public void tstExchange() {
 		//set up test
-		StackInterface tstStack = new UnboundedStack();
+		StackInterface<String> tstStack = new UnboundedStack<>();
 		String tstStringTwo = "Another interesting String";
 		String tstResultOne = null, tstResultTwo = null;
 		try {
@@ -125,7 +106,7 @@ public class UnboundedStackTests {
 	@Test
 	public void tstEmpty() {
 		//set up test
-		StackInterface tstStack = new UnboundedStack();
+		StackInterface<String> tstStack = new UnboundedStack<>();
 		try {
 			tstStack.push(tstString);
 		//change data
@@ -142,7 +123,7 @@ public class UnboundedStackTests {
 	public void tstDepth() {
 		//set up test
 		int tstCount = 5;
-		StackInterface tstStack = new UnboundedStack(); 
+		StackInterface<String> tstStack = new UnboundedStack<>(); 
 		//change data
 		try {
 		for (int i = 0; i < tstCount; i++) {
@@ -153,17 +134,6 @@ public class UnboundedStackTests {
 			fail("Unexpected StackException encountered");
 		}
 		assertTrue("depth not correct", (tstStack.depth() == tstCount));
-		//teardown
-	}
-	
-	//@Test
-	public void tstSizeof() {
-		//set up test
-		int tstSize = 4; 
-		//change data
-		StackInterface tstStack = new UnboundedStack(tstSize);
-		//test changes
-		assertTrue("Not correct size", (tstStack.sizeof() == tstSize));
 		//teardown
 	}
 	

@@ -1,6 +1,6 @@
 package linkedLists;
 
-public interface ListInterface<T> extends Iterable<T> {
+public interface ListInterface<T> extends Iterable<T>, abstractDataTypes.AbstractDataInterface<T> {
 
 	public void add(int n, T item);
 	public void add(T item);

@@ -1,42 +1,77 @@
 package unboundedStacksAndQueues;
 
+/**
+ * An unbounded implementation of {@link QueueInterface}
+ * 
+ * @author kevna (Aaron Moore)
+ *
+ * @param <T>		The type of item to be stored in the queue
+ */
 public class UnboundedQueue<T> implements QueueInterface<T> {
 	
+	/**
+	 * An instance of {@link linkedLists.ListInterface} to hold the items in the queue
+	 */
 	private linkedLists.ListInterface<T> theQueue;
 
-	//default constructor
+	/**
+	 * Constructor initialising the linked list.
+	 */
 	public UnboundedQueue() {
 		theQueue= new linkedLists.DoubleLinkedList<>();
 	}
 
-	//add an object to the end of the queue
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public void add(T item) {
 			theQueue.add(item);
 	}
 
-	//take the item from the front of the queue
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public T remove() {
 		return theQueue.remove(0);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public T head() {
 		return theQueue.get(0);
 	}
-	
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public boolean isEmpty() {
 		return (theQueue.getLength() == 0);
 	}
 
-	//get queue length
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public int getLength() {
 		return theQueue.getLength();
 	}
 
-	//requested form of queue length
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public int sizeof() {
 		return getLength();
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer();
@@ -47,6 +82,10 @@ public class UnboundedQueue<T> implements QueueInterface<T> {
 		return result.toString();
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	@Override
 	public boolean equals(Object other) {
 		try {

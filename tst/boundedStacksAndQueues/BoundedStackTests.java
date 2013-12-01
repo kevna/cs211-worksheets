@@ -156,17 +156,6 @@ public class BoundedStackTests {
 		//teardown
 	}
 	
-	@Test
-	public void tstSizeof() {
-		//set up test
-		int tstSize = 4; 
-		//change data
-		StackInterface<Object> tstStack = new BoundedStack(tstSize);
-		//test changes
-		assertTrue("Not correct size", (tstStack.sizeof() == tstSize));
-		//teardown
-	}
-	
 	public void tst() {
 		//set up test
 		//change data

@@ -2,6 +2,8 @@ package boundedStacksAndQueues;
 
 public class BoundedQueue implements unboundedStacksAndQueues.QueueInterface<Object> {
 	
+	public static final int DEFAULT_MAXIMUM = 25;
+	
 	private Object[] theQueue;
 	private int backEnd;
 	//private static final int DEFAULT_MAXIMUM = 25;

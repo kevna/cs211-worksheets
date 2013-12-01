@@ -2,21 +2,39 @@ package unboundedStacksAndQueues;
 
 import boundedStacksAndQueues.StackUnderflowException;
 
+/**
+ * An unbounded implementation of {@link StackInterface}
+ * 
+ * @author kevna (Aaron Moore)
+ *
+ * @param <T>		The type of item to be stored in the queue
+ */
 public class UnboundedStack<T> implements StackInterface<T> {
 	
+	/**
+	 * An instance of {@link linkedLists.ListInterface} to hold the items in the stack
+	 */
 	private linkedLists.ListInterface<T> theStack;
-	//private static final int DEFAULT_MAXIMUM = 25;
 
+	/**
+	 * Constructor initialising the linked list.
+	 */
 	public UnboundedStack() {
 		theStack= new linkedLists.DoubleLinkedList<>();
 	}
 
-	//add an item to the top of the stack
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public void push(T item) {
 			theStack.add(item);
 	}
 
-	//take the top item off of the stack
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public T pop() throws StackUnderflowException {
 		if (theStack.isEmpty()) {
 			throw new StackUnderflowException();
@@ -25,7 +43,10 @@ public class UnboundedStack<T> implements StackInterface<T> {
 		}
 	}
 
-	//access the top of the stack without popping it off
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public T peek() {
 		if (!theStack.isEmpty()) {
 			return theStack.get(theStack.getLength() - 1);
@@ -33,10 +54,18 @@ public class UnboundedStack<T> implements StackInterface<T> {
 		return null;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public void duplicate() {
 		push(peek());
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public void exchange() throws StackUnderflowException {
 			T itemOne = pop();
 			T itemTwo = pop();
@@ -44,21 +73,34 @@ public class UnboundedStack<T> implements StackInterface<T> {
 			push(itemTwo);
 	}
 
-	//test if the stack is empty
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public boolean isEmpty () {
 		return theStack.isEmpty();
 	}
 
-	//get the number of items in the stack
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public int depth() {
 		return theStack.getLength();
 	}
 
-	//get the total size of the stack
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public int sizeof() {
 		return depth();
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer();
@@ -69,6 +111,10 @@ public class UnboundedStack<T> implements StackInterface<T> {
 		return result.toString();
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	@Override
 	public boolean equals(Object other) {
 		try {

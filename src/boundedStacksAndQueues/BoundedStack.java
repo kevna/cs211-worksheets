@@ -1,6 +1,6 @@
 package boundedStacksAndQueues;
 
-public class BoundedStack implements unboundedStacksAndQueues.StackInterface {
+public class BoundedStack implements unboundedStacksAndQueues.StackInterface<Object> {
 	
 	private Object[] theStack;
 	private int position;

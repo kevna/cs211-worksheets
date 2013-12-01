@@ -1,6 +1,6 @@
 package boundedStacksAndQueues;
 
-public class BoundedQueue implements unboundedStacksAndQueues.QueueInterface {
+public class BoundedQueue implements unboundedStacksAndQueues.QueueInterface<Object> {
 	
 	private Object[] theQueue;
 	private int backEnd;

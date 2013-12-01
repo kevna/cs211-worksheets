@@ -1,16 +1,41 @@
 package linkedLists;
 
+/**
+ * A single-linked list implementation of {@link ListInterface} using {@link AbstractList}.
+ * 
+ * @author kevna (Aaron Moore)
+ *
+ * @param <T>		Type of object to be stored in the list.
+ */
 public class LinkedList<T> extends AbstractList<T> {
 	
-	private Node<T> head, tail;
-	//private int length;
+	/**
+	 * Pointer to the first Element in the list.
+	 */
+	private Node<T> head;
+	/**
+	 * Pointer to the last Element in the list.
+	 */
+	private Node<T> tail;
 	
+	/**
+	 * Constructor creating a blank list (no elements).
+	 */
 	public LinkedList() {
 		super();
 		head = null;
 		tail = null;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Due to being a single-linked list, this method must iterate through most of
+	 * list in order to add items close to the end of the list.
+	 * This may present an issue in programs storing large numbers of items
+	 * or those which involve many, fast-processed iterations.
+	 * </p>
+	 */
 	public void add(int n, T item) {
 		Node<T> newItem = new Node<T>(item);
 		if (length == 0) {
@@ -33,6 +58,14 @@ public class LinkedList<T> extends AbstractList<T> {
 		length++;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * Due to being a single-linked list, this method must iterate through most of
+	 * list in order to retrieve items close to the end of the list.
+	 * This may present an issue in programs storing large numbers of items
+	 * or those which involve many, fast-processed iterations.
+	 * </p>
+	 */
 	public T get(int n) {
 		Node<T> current;
 		if (n < (length-1)) {
@@ -48,6 +81,14 @@ public class LinkedList<T> extends AbstractList<T> {
 		return current.getContent();
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * Due to being a single-linked list, this method must iterate through most of
+	 * list in order to remove items close to the end of the list.
+	 * This may present an issue in programs storing large numbers of items
+	 * or those which involve many, fast-processed iterations.
+	 * </p>
+	 */
 	public T remove(int n) {
 		Node<T> removed = null;
 		if ((length == 0) || (n > length)) {

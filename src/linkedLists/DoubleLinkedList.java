@@ -1,16 +1,37 @@
 package linkedLists;
 
+/**
+ * A double-linked list implementation of {@link ListInterface} using {@link AbstractList}.
+ * This double-linked list improves on the alternative single-linked {@link LinkedList}.
+ * 
+ * @author kevna (Aaron Moore)
+ *
+ * @param <T>		Type of object to be stored in the list.
+ */
 public class DoubleLinkedList<T> extends AbstractList<T> {
 	
-	private DoubleLinkNode<T> head, tail;
-	//private int length;
+	/**
+	 * Pointer to the first Element in the list.
+	 */
+	private DoubleLinkNode<T> head;
+	/**
+	 * Pointer to the last Element in the list.
+	 */
+	private DoubleLinkNode<T> tail;
 	
+	/**
+	 * Constructor creating a blank list (no elements).
+	 */
 	public DoubleLinkedList() {
 		super();
 		head = null;
 		tail = null;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public void add(int n, T item) {
 		DoubleLinkNode<T> newItem = new DoubleLinkNode<>(item);
 		if (length == 0) {
@@ -46,6 +67,10 @@ public class DoubleLinkedList<T> extends AbstractList<T> {
 		length++;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public T get(int n) {
 		DoubleLinkNode<T> current;
 		if (length == 1) {
@@ -68,6 +93,10 @@ public class DoubleLinkedList<T> extends AbstractList<T> {
 		return current.getContent();
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * 
+	 */
 	public T remove(int n) {
 		DoubleLinkNode<T> removed = null;
 		if ((length == 0) || (n > length)) {
